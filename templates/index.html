@@ -6,19 +6,19 @@
 <body>
     <h1>Weight Loss Calculator</h1>
     <h2>Use this calculator to estimate how long it will take to reach your goal body fat percentage.</h2>
-    <h3>Please note weight is in pounds. If you're not sure what to put for percentage of weight lost as fat, you can keep it as the default value of 75%. The same applies to rate of weight loss.</h3>
+    <p>Please note weight is in pounds. If you're not sure what to put for percentage of weight lost as fat, you can keep it as the default value of 75%. The same applies to rate of weight loss (default 1 lb/week).</p>
     <form action="/calculate" method="post">
         Current Weight: <input type="text" name="current_weight"><br>
         Current Body Fat Percentage: <input type="text" name="current_bf_perc"><br>
         Goal Body Fat Percentage: <input type="text" name="goal_bf_perc"><br>
         Percentage of Weight Lost as Fat (Default is 75% if not entered): <input type="text" name="perc_weight_lost_as_fat" placeholder="75"><br>
-        Rate of Weight Loss (lbs/week) (Default is 1 if not entered): <input type="text" name="rate_of_weight_loss" placeholder="1"><br>
+        Rate of Weight Loss (lbs/week) (Default is 1 lb/week if not entered): <input type="text" name="rate_of_weight_loss" placeholder="1"><br>
         <input type="submit" value="Calculate">
     </form>
 
     {% if finish_date %}
     <h2>Results</h2>
-    <p>To reach your goal body fat percentage, you need to lose about {{ weight_to_lose }} lbs, resulting in a final weight of {{ final_weight }} lbs.</p>
+    <p>To reach your goal body fat percentage of {{ goal_bf_perc }}%, you need to lose about {{ weight_to_lose }} lbs, resulting in a final weight of {{ final_weight }} lbs.</p>
     <p>Your estimated completion date is: {{ finish_date }}.</p>
     {% endif %}
 </body>

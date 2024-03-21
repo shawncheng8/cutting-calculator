@@ -32,7 +32,7 @@ def calculate():
     weight_to_lose = round(weight_to_lose, 1)
 
     # Pass the results back to the frontend
-    return render_template('index.html', finish_date=finish_date, weight_to_lose=weight_to_lose, final_weight=final_weight)
+    return render_template('index.html', goal_bf_perc=goal_bf_perc, finish_date=finish_date, weight_to_lose=weight_to_lose, final_weight=final_weight)
 
 if __name__ == '__main__':
     app.run(debug=True)
