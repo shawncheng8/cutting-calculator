@@ -7,12 +7,12 @@
     <h1>Weight Loss Calculator</h1>
     <h2>Use this calculator to estimate how long it will take to reach your goal body fat percentage.</h2>
     <p>Please note weight is in pounds. <br>
-    The last two fields ("percentage of weight lost as fat" and "rate of weight loss") are optional. If you don't fill them in, they will default to 75% and 1 lb/week respectively.</p>
+    The last two fields ("percentage of weight lost as fat" and "rate of weight loss") are optional. If you don't fill them in, they will default to 75 and 1 respectively.</p>
     <form action="/calculate" method="post">
-        Current Weight: <input type="text" name="current_weight" value="{{ current_weight }}"><br>
-        Current Body Fat Percentage: <input type="text" name="current_bf_perc" value="{{ current_bf_perc }}"><br>
-        Goal Body Fat Percentage: <input type="text" name="goal_bf_perc" value="{{ goal_bf_perc }}"><br>
-        Percentage of Weight Lost as Fat: <input type="text" name="perc_weight_lost_as_fat" value="{{ perc_weight_lost_as_fat }}"><br>
+        Current Weight (lbs): <input type="text" name="current_weight" value="{{ current_weight }}"><br>
+        Current Body Fat Percentage (%): <input type="text" name="current_bf_perc" value="{{ current_bf_perc }}"><br>
+        Goal Body Fat Percentage (%): <input type="text" name="goal_bf_perc" value="{{ goal_bf_perc }}"><br>
+        Percentage of Weight Lost as Fat (%): <input type="text" name="perc_weight_lost_as_fat" value="{{ perc_weight_lost_as_fat }}"><br>
         Rate of Weight Loss (lbs/week): <input type="text" name="rate_of_weight_loss" value="{{ rate_of_weight_loss }}"><br>
         <input type="submit" value="Calculate">
     </form>
