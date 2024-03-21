@@ -31,8 +31,19 @@ def calculate():
     final_weight = round(current_weight - weight_to_lose, 1)
     weight_to_lose = round(weight_to_lose, 1)
 
-    # Pass the results back to the frontend
-    return render_template('index.html', goal_bf_perc=goal_bf_perc, finish_date=finish_date, weight_to_lose=weight_to_lose, final_weight=final_weight)
+    # Prepare values to send back
+    values = {
+        'current_weight': current_weight,
+        'current_bf_perc': current_bf_perc,
+        'goal_bf_perc': goal_bf_perc or 75,  # Ensure there's a default if goal_bf_perc is empty
+        'perc_weight_lost_as_fat': perc_weight_lost_as_fat,
+        'rate_of_weight_loss': rate_of_weight_loss,
+        'finish_date': finish_date,
+        'weight_to_lose': weight_to_lose,
+        'final_weight': final_weight
+    }
+
+    return render_template('index.html', **values)
 
 if __name__ == '__main__':
     app.run(debug=True)
